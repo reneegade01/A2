@@ -6,6 +6,7 @@ public class Admin {
 	    private int positiveCounter;
 	    private int groupCounter;
 	    private int userCounter;
+	    private User lastUpdatedUser;
 	    private Group root; 
 	    private Admin()
 	    {
@@ -44,6 +45,15 @@ public class Admin {
 	    	return positiveCounter;
 	    }
 	    
+	    protected void setLastUpdatedUser(User u) {
+	    	this.lastUpdatedUser = u; 
+	    }
+	    
+	    private int getLastUpdatedUser()
+	    {
+	    	System.out.println(lastUpdatedUser.getUserId());
+	    	return lastUpdatedUser.getUserId();
+	    }
 	    protected void updateMessageCount(String s)
 	    {
 	    	if (s.equals("summer"))
@@ -59,5 +69,15 @@ public class Admin {
 	    
 	    protected void updateUserCounter() {
 	    	userCounter++; 
+	    }
+	    
+	    private boolean validateId(Id i) {
+	    	
+	        if 
+	    	return false;
+	    }
+	    
+	    private boolean uniqueId(Id i) {
+	    	
 	    }
 }

@@ -20,11 +20,16 @@ public class UserFunctions {
 	}
 	
 	void tweet(String s) {
-		
+
+		current.updateLastUpdateTime(); 
 		current.getNewsfeed().add(s);
+		current.getNewsfeed().add(String.valueOf(current.getLastUpdateTime()));
+		admin.setLastUpdatedUser(current); 
 		for (User follower: followers)
 		{
 			follower.getNewsfeed().add(s);
+			follower.getNewsfeed().add(String.valueOf(current.getLastUpdateTime()));
+			
 			admin.updateMessageCount(s);
 		}
 		
